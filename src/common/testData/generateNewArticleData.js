@@ -10,5 +10,11 @@ export function generateNewArticleData(logger, tagNumber = 0) {
     tags,
   };
 
+  logger.debug(`Generated new article: ${JSON.stringify(article)}`);
+
+  if (tags.lenght === 0) {
+    logger.warning(`Article does not have tag: ${JSON.stringify(article)}`);
+  }
+
   return article;
 }
